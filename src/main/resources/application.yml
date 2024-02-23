@@ -1,0 +1,16 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            clientId: <google client id>
+            clientSecret: <google client secret>
+            scope: email, public_profile
