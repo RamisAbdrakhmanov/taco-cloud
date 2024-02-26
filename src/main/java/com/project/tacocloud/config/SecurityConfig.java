@@ -19,15 +19,15 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/design", "/orders").hasRole("USER")
+                        .requestMatchers("/design", "/orders/*").hasRole("USER")
                         .requestMatchers("/", "/**").permitAll())
 
                 .formLogin(form -> form
                         .loginPage("/login")
                         .defaultSuccessUrl("/design"))
-
                 .logout(logout -> logout
-                        .logoutSuccessUrl("/"))
+                        .logoutSuccessUrl("/login"))
+                .csrf( csrf -> csrf.disable())
                 .build();
     }
 

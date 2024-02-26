@@ -2,6 +2,7 @@ package com.project.tacocloud.model;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import lombok.Data;
+
 @Data
 public class RegistrationForm {
     private String username;
