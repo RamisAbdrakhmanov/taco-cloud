@@ -18,3 +18,9 @@ spring:
   data:
     rest:
       base-path: /data-api
+
+  profiles: prod
+  rabbitmq:
+   host: rabbit.tacocloud.com
+   username: guest
+   password: guest
